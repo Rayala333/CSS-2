@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: tahoma;
+            overflow-x: hidden;
+            background-color: blue;
+        }
+        .slider{
+            position: relative;
+            width: 700px;
+            height: 300px;
+            margin: 115px auto 0;
+        }
+        .slider .prev,
+        .slider .next{
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            margin-top: -20px;
+            border-radius: 50px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #fff;
+            color: black;
+            transition: all 0.7s;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .slider .prev:hover,
+        .slider .next:hover{
+            opacity: 1;
+            background-color: white;
+
+        }
+
+        .slider .prev{
+            left: -70px;
+        }
+        .slider .prev::before{
+            content: '<';
+        }
+
+        .slider .next{
+            right: -70px;
+        }
+        .slider .next::before{
+            content: '>';
+        }
+
+        .slider > ul{
+            list-style: none;
+            position: relative;
+            width: 754px;
+            height: 292px;
+            margin: 0;
+            padding: 0;
+        }
+        .slider > ul > li{
+            overflow: hidden;
+            position: absolute;
+            z-index: 0;
+            left: 377px;
+            top: 147px;
+            width: 0;
+            height: 0;
+            margin: 0;
+            position: 0;
+            border: 3px solid white;
+            background-color: #333;
+            cursor: pointer;
+        }
+        .slider > ul > li > img{
+            width: 100%;
+            height: 100%;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="prev"></div>
+        <div class="next"></div>
+        <ul>
+            <li>
+                <img src="img/AM2.jpg" alt="new">
+            </li>
+            <li>
+                <img src="img/AM1.jpg" alt="new">
+            </li>
+            <li>
+                <img src="img/AM3.jpg" alt="new">
+            </li>
+            <li>
+                <img src="img/AM4.jpg" alt="new">
+            </li>
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"> </script>
+    <script src="js/jquery.hislide.js"></script>
+    <script>
+
+        $('.slide').slider();
+
+
+
+    </script>
+</body>
+</html>
